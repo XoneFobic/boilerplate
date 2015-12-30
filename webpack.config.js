@@ -18,22 +18,24 @@ var host = process.env.APP_HOST || 'localhost';
 
 module.exports = {
   devtool: 'eval',
+  //resolve: { root: assetsPath + '/assets' },
   entry  : [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://' + host + ':3001',
     entryPath
   ],
   output : {
-    path    : assetsPath,
-    filename: 'js/app.js'
+    path      : assetsPath,
+    filename  : 'js/app.js',
+    publicPath: '/assets/'
   },
   module : {
     loaders: [
       { test: /\.js$/, loader: 'ng-annotate-loader!jshint-loader', exclude: /node_modules|bower_components/ },
 
-      { test: /\.css$/, loader: 'style-loader!css-loader!postcss' },
-      { test: /\.scss$/, loader: 'style-loader!css-loader!postcss!sass-loader' },
-      { test: /\.less$/, loader: 'style-loader!css-loader!postcss!less-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' }, // This will be vendor
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
 
       { test: /\.html$/, loader: 'html-loader' },
 
