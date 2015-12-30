@@ -1,7 +1,10 @@
-module.exports = function () {
+(function () {
   'use strict';
 
-  angular.module('app.core').directive('app', function () {
+  module.exports = angular.module('app.core').directive('app', appDirective);
+
+  /* ngInject */
+  function appDirective () {
     console.debug('<app></app> Directive Loaded.');
 
     return {
@@ -9,5 +12,5 @@ module.exports = function () {
       restrict: 'E',
       template: require('./app.view.html')
     };
-  });
-}();
+  }
+})();

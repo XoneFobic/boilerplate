@@ -1,9 +1,9 @@
-'use strict';
+(function () {
+  'use strict';
 
-var app = angular.module('app.core', [
-  'ui.router'
-]);
+  module.exports = angular.module('app.core', [
+    'ui.router'
+  ]);
 
-require('./app.directive.js');
-
-module.exports = app;
+  require('./app.directive.js');
+})();

@@ -1,9 +1,11 @@
-'use strict';
+(function () {
+  'use strict';
 
-module.exports = function () {
-  /* Styles */
+  module.exports = function () {
+    /* Styles */
 
-  /* Javascript */
-  require('angular');
-  require('angular-ui-router');
-};
+    /* Javascript */
+    require('angular');
+    require('angular-ui-router');
+  };
+})();
