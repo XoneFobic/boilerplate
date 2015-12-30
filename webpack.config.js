@@ -12,7 +12,7 @@ var Webpack           = require('webpack'),
 var bowerComponentsPath = path.resolve(__dirname, 'bower_components'),
     nodeModulesPath     = path.resolve(__dirname, 'node_modules'),
     assetsPath          = path.resolve(__dirname, 'public', 'assets'),
-    entryPath           = path.resolve(__dirname, 'frontend', 'js', 'init.js');
+    entryPath           = path.resolve(__dirname, 'frontend', 'js', 'bootloader.js');
 
 var host = process.env.APP_HOST || 'localhost';
 
