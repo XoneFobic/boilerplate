@@ -26,12 +26,12 @@ module.exports = function () {
   });
 
   var bundler = new WebpackDevServer(compiler, {
-    publicPath: '/assets/',
-    hot       : true,
-    quiet     : false,
-    noInfo    : true,
-    stats     : {
-      colors: true
+    publicPath : '/assets/',
+    hot        : true,
+    quiet      : false,
+    noInfo     : true,
+    stats      : {
+      colors : true
     }
   });
 

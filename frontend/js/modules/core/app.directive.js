@@ -8,9 +8,9 @@
     console.debug('<app></app> Directive Loaded.');
 
     return {
-      replace : true,
-      restrict: 'E',
-      template: require('./app.view.jade')
+      replace  : true,
+      restrict : 'E',
+      template : require('./app.view.jade')
     };
   }
 })();

@@ -15,9 +15,9 @@ var isProduction = process.env.NODE_ENV === 'production',
     publicPath   = path.resolve(__dirname, '..', 'public');
 
 if (! isProduction) {
-  app.all(['/assets/*', '*.hot-update.json'], function (request, response) {
+  app.all([ '/assets/*', '*.hot-update.json' ], function (request, response) {
     proxy.web(request, response, {
-      target: 'http://' + host + ':3001'
+      target : 'http://' + host + ':3001'
     });
   });
 }
