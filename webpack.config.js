@@ -31,21 +31,22 @@ module.exports = {
   },
   module : {
     loaders: [
-      { test: /\.js$/, loader: 'ng-annotate-loader!jshint-loader', exclude: /node_modules|bower_components/ },
+      { test: /\.js$/, loader: 'ng-annotate!jshint', exclude: /node_modules|bower_components/ },
 
-      { test: /\.css$/, loader: 'style-loader!css-loader' }, // This will be vendor
-      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+      { test: /\.css$/i, loader: 'style!css' }, // This will be vendor
+      { test: /\.scss$/i, loader: 'style!css!sass' },
+      { test: /\.less$/i, loader: 'style!css!less' },
 
-      { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.html$/i, loader: 'html' },
+      { test: /\.jade$/i, loader: 'jade' },
 
-      { test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/, loader: 'file-loader?name=fonts/[name].[ext]?[hash]' },
+      { test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/i, loader: 'file?name=fonts/[name].[ext]?[hash]' },
 
       {
         test   : /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader?hash=sha512&digest=hex&name=images/[hash].[ext]',
-          'image-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file?hash=sha512&digest=hex&name=images/[hash].[ext]',
+          'image?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]

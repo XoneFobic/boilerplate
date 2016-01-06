@@ -10,7 +10,7 @@
     return {
       replace : true,
       restrict: 'E',
-      template: require('./app.view.html')
+      template: require('./app.view.jade')
     };
   }
 })();
