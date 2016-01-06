@@ -1,0 +1,14 @@
+.bgc-transparent {
+  background-color : transparent;
+}
+
+.bgc-white {
+  $white : rgba(255, 255, 255, 1);
+  background-color : $white;
+  &-1 {
+    background-color : transparentize($white, 0.1);
+  }
+  &-2 {
+    background-color : transparentize($white, 0.2);
+  }
+}
