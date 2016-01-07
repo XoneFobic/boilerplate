@@ -1,4 +1,14 @@
 body {
-  background : rgba(204, 255, 0, 1);
-  min-height : 100vh;
+  $bgColor : #ff8300;
+  background : $bgColor;
+  background : linear-gradient(135deg, $bgColor 0%, darken($bgColor, 10%) 100%);
+}
+
+.app {
+  height  : 100vh;
+  display : flex;
+  > div {
+    display   : flex;
+    flex-grow : 1;
+  }
 }

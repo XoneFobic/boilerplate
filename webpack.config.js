@@ -3,22 +3,19 @@
 require('dotenv').load();
 
 var Webpack           = require('webpack'),
-    StatsPlugin       = require('stats-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     autoprefixer      = require('autoprefixer'),
     csswring          = require('csswring'),
-    path              = require('path');
+    path              = require('path'),
+    BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-var bowerComponentsPath = path.resolve(__dirname, 'bower_components'),
-    nodeModulesPath     = path.resolve(__dirname, 'node_modules'),
-    assetsPath          = path.resolve(__dirname, 'public', 'assets'),
-    entryPath           = path.resolve(__dirname, 'frontend', 'js', 'bootloader.js');
+var assetsPath = path.resolve(__dirname, 'public', 'assets'),
+    entryPath  = path.resolve(__dirname, 'frontend', 'js', 'bootloader.js');
 
-var host = process.env.APP_HOST || 'localhost';
+var host = process.env.APP_HOST || 'localhost',
+    port = process.env.APP_PORT || 8080;
 
 module.exports = {
   devtool : 'eval',
-  //resolve: { root: assetsPath + '/assets' },
   entry   : [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://' + host + ':3001',
@@ -53,6 +50,16 @@ module.exports = {
   },
   postcss : [ autoprefixer ],
   plugins : [
-    new Webpack.HotModuleReplacementPlugin()
+    new Webpack.HotModuleReplacementPlugin(),
+    new BrowserSyncPlugin({
+      host  : host,
+      port  : port,
+      proxy : 'http://' + host + ':3000/',
+      ui    : {
+        port : port + 1
+      }
+    }, {
+      reload : false
+    })
   ]
 };
