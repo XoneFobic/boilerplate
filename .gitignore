@@ -3,3 +3,22 @@
 bower_components/
 node_modules/
 npm-debug.log*
+
+## OSX related ignores
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Icon
+Network Trash Folder
+Temporary Items
+
